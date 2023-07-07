@@ -1,5 +1,6 @@
 export const colorSuccess = '#36B37E';
 export const colorError = '#FF5630';
+export const colorAlert = '#FFAB00';
 
 export function toast(message, color){
   Toastify({
