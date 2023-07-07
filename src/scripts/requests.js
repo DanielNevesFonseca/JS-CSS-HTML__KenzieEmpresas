@@ -67,3 +67,27 @@ export async function login(loginBody){
   .catch(err => toast(err.message, colorError));
   return loginData;
 }
+
+export async function register(registerBody){
+  const registerData = await fetch(`${baseUrl}/employees/create`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(registerBody),
+  })
+  .then(async (res) => {
+    const resJson = await res.json();
+    if(res.ok){
+      toast('Cadastro feito com sucesso! Redirecionando para página de login!', colorSuccess);
+      setTimeout(()=> {
+        window.location.replace('../pages/login.html');
+      }, 1500);
+      return resJson;
+    } else {
+      throw new Error(resJson.message);
+    }
+  })
+  .catch(err => toast(err.message, colorError));
+  return registerData;
+}

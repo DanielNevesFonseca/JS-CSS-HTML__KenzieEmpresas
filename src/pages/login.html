@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/icons/logo-tab.png" type="image/x-icon">
   <!-- CSS -->
   <link rel="stylesheet" href="../styles/reset.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -20,7 +21,7 @@
     <img class="header__logo button-home" src="../assets/icons/logo-tab.png" alt="Logo da Kenzie Empresas.">
     <div class="header__buttons-container">
       <button class="button-home button-option">Home</button>
-      <button class="button-register button-default">Cadastro</button>
+      <button class="go-to-register button-default">Cadastro</button>
     </div>
   </header>
 
@@ -36,14 +37,14 @@
         <input autocomplete="off" class="login__input text-1-medium" type="password" name="password" id="login-password" placeholder="Sua senha">
         <button type="submit" class="button-login button-default">Login</button>
         <span class="text-1-medium">ou</span>
-        <button class="button-register button-option">Cadastre-se</button>
+        <button class="go-to-register button-option">Cadastre-se</button>
       </form>
     </section>
   </main>
 
   <!-- JAVASCRIPT -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-  <script type="module" src="../scripts/login.js"></script>
+  <script type="module" defer src="../scripts/login.js"></script>
 </body>
 
 </html>
