@@ -3,7 +3,6 @@ body {
   flex-direction: column;
   min-width: 98dvw;
   min-height: 100dvh;
-  overflow: hidden;
 }
 /* ==================== HEADER ==================== */
 .header {
@@ -31,9 +30,8 @@ body {
 /*==================== MAIN ====================*/
 
 .main {
-  max-width: 100%;
-  height: 100%;
-
+  max-width: 100vw;
+  height: calc(100vh - 184px) ;
   display: flex;
   justify-content: center;
   margin: 42px 140px;
@@ -44,7 +42,7 @@ body {
 
 
 .main__background-image, .main__companies {
-  max-height: 100%;
+  height: 100%;
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -52,8 +50,8 @@ body {
 }
 
 .main__background-image > img {
-  object-fit: contain;
-  max-height: 530px;
+  object-fit: cover;
+  min-height: 100%;
   width: 100%;
 }
 
