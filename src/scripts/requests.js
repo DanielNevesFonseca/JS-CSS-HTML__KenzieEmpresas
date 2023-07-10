@@ -91,3 +91,47 @@ export async function register(registerBody){
   .catch(err => toast(err.message, colorError));
   return registerData;
 }
+
+export async function readInfoUserLogged(){
+  const info = JSON.parse(localStorage.getItem('@KenzieEmpresas:infoUser'));
+  const token = info.authToken;
+  const infoUser = await fetch(`${baseUrl}/employees/profile`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+  .then(async (res) =>  {
+    const resJson = await res.json();
+
+    if(res.ok){
+      return resJson;
+    } else {
+      throw new Error(resJson.message);
+    }
+  })
+  .catch(err => toast(err.message, colorError));
+  return infoUser;
+}
+
+export async function readInfoCompanyById(companyId){
+  const info = JSON.parse(localStorage.getItem('@KenzieEmpresas:infoUser'));
+  const token = info.authToken;
+  const infoCompany = await fetch(`${baseUrl}/companies/readById/${companyId}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+  .then(async (res) =>  {
+    const resJson = await res.json();
+
+    if(res.ok){
+      return resJson;
+    } else {
+      throw new Error(resJson.message);
+    }
+  })
+  .catch(err => toast(err.message, colorError));
+  return infoCompany;
+}
