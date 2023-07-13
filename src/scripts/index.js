@@ -24,7 +24,6 @@ async function renderCompanies() {
         toast('Selecione um setor e veja as empresas listadas!', colorSuccess);
       } else {
         const companiesRequest = await readCompaniesByCategory(categoryValue);
-        console.log(companiesRequest)
         companiesRequest.forEach(company => {
           const companyCard = createCompanyCard(company.name, categoryValue);
           container.appendChild(companyCard);
